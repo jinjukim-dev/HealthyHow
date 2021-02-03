@@ -2383,7 +2383,7 @@ input, select, textarea {
 	}
 
 		table tbody tr {
-			border: solid 1px #c9c9c9;
+			border: solid 1px;
 			border-left: 0;
 			border-right: 0;
 		}
@@ -2404,11 +2404,11 @@ input, select, textarea {
 		}
 
 		table thead {
-			border-bottom: solid 2px #c9c9c9;
+			border-bottom: solid 2px;
 		}
 
 		table tfoot {
-			border-top: solid 2px #c9c9c9;
+			border-top: solid 2px;
 		}
 
 		table.alt {
@@ -2416,7 +2416,7 @@ input, select, textarea {
 		}
 
 			table.alt tbody tr td {
-				border: solid 1px #c9c9c9;
+				border: solid 1px;
 				border-left-width: 0;
 				border-top-width: 0;
 			}
