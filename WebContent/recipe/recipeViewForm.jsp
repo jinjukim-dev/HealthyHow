@@ -40,34 +40,77 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1><%= recipe.getRecipeTitle()%></h1>
-							<span class="image main"><img src="images/<%=recipe.getFileName()%>" alt="" style="max-height: 450px; "/></span>
-							<br/>					
+							<div style="text-align: center">
+								<h1><%= recipe.getRecipeTitle()%></h1><!-- 레시피제목 -->
+								<h3><%= recipe.getRecipeInfo() %></h3><!-- 요리소개 -->
+								<!-- 대표사진 -->
+								<span><img src="images/<%=recipe.getFileName()%>" alt="" style="width: 550px;"/></span>
+							</div>
+							<br/>			
 									<div class="table-wrapper">
 										<table>
 											<thead>
 												<tr>
-													<th colspan="3" style="text-align: center; font-size: 20px; "><%=recipe.getRecipeName()%> 레시피</th>																									
+													<th style="text-align:left; font-size: 20px;">
+													준비 재료
+													</th>																									
 												</tr>
 											</thead>
-											
-											<tbody>
+											<!-- 요리재료 -->					
+											<tbody style="text-align:center;">
+												<tr>
+													<td><%= recipe.getRecipeIngredi1()%></td>
+													<td><%= recipe.getRecipeQuant1() %></td>																								
+												</tr>
+												<tr>
+													<td><%= recipe.getRecipeIngredi2()%></td>
+													<td><%= recipe.getRecipeQuant2() %></td>																									
+												</tr>
+												<tr>
+													<td><%= recipe.getRecipeIngredi3()%></td>
+													<td><%= recipe.getRecipeQuant3() %></td>																									
+												</tr>
+												<tr>
+													<td><%= recipe.getRecipeIngredi4()%></td>
+													<td><%= recipe.getRecipeQuant4() %></td>																									
+												</tr>
+												<tr>
+													<td><%= recipe.getRecipeIngredi5()%></td>
+													<td><%= recipe.getRecipeQuant5() %></td>																									
+												</tr>
+										 </tbody>
+										 </table>
+										 <table>
+											 	<thead>
+													<tr>
+														<th colspan="3" style="text-align:left; font-size: 20px; ">조리순서</th>																									
+													</tr>
+												</thead>
+												<!-- 조리 순서 -->
+												<tr>												
+													<td colspan="3"><img src="images/<%=recipe.getRecipeStep1fileName()%>" style="max-height: 350px; width: 400px; float:left; margin:10px;"/><h3>Step1</h3><br/><%= recipe.getRecipeStep1()%></td>																		
+												</tr>
+												<tr>												
+													<td colspan="3"><img src="images/<%=recipe.getRecipeStep2fileName()%>" style="max-height: 350px; width: 400px; float:left; margin:10px;"/><h3>Step2</h3><br/><%= recipe.getRecipeStep2()%></td>																		
+												</tr>
+												<tr>												
+													<td colspan="3"><img src="images/<%=recipe.getRecipeStep3fileName()%>" style="max-height: 350px; width: 400px; float:left; margin:10px;"/><h3>Step3</h3><br/><%= recipe.getRecipeStep3()%></td>																		
+												</tr>
+												<!-- 요리팁  -->
+												<tr>												
+													<td>요리팁/주의사항</td>
+													<td colspan="2"><%= recipe.getRecipeTips() %></td>																								
+												</tr>
+											</table>
+											<table>				
 												<tr>
 													<td style="width: 20%;">작성자</td>
-													<td><%= recipe.getId() %></td>													
+													<td colspan="2"><%= recipe.getId() %></td>													
 												</tr>
 												<tr>
 													<td>등록일</td>
-													<td><%= recipe.getRecipeDate().substring(0, 4)+"년 "+recipe.getRecipeDate().substring(5, 7)+"월 "+recipe.getRecipeDate().substring(8, 10)+"일 "%></td>													
-												</tr>
-												<tr>
-													<td>재료</td>
-													<td><%= recipe.getRecipeIngredi()%></td>													
-												</tr>
-												<tr>
-													<td>조리순서</td>
-													<td><%= recipe.getRecipeSteps()%></td>													
-												</tr>
+													<td colspan="2"><%= recipe.getRecipeDate().substring(0, 4)+"년 "+recipe.getRecipeDate().substring(5, 7)+"월 "+recipe.getRecipeDate().substring(8, 10)+"일 "%></td>													
+												</tr>																		
 										</table>
 									</div>
 									<br/>								

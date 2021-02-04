@@ -44,8 +44,7 @@
 			<div id="wrapper">
 
 				<!-- Main -->
-				<h2 style="text-align: center;">궁금한 <%=recipeMenu%></h2>
-				<h2 style="text-align: center;">레시피를 클릭해보세요!</h2>
+				<h2 style="text-align: center;">궁금한 <%=recipeMenu%> 레시피를 클릭해보세요!</h2>
 					<div id="main">
 						<div class="inner">
 							<section class="tiles">
@@ -62,7 +61,7 @@
 										<img src="images/<%= list.get(i).getFileName()%>" alt="" style="min-height: 300px; max-height: 550px" />
 									</span>
 									<a href="http://localhost:8080/RecipeSite/index.jsp?center=./recipe/recipeViewForm&recipeNo=<%=list.get(i).getRecipeNo()%>">
-										<h2><%= list.get(i).getRecipeName()%></h2>
+										<h2><%= list.get(i).getRecipeTitle() %></h2>
 										<div class="content">
 											<p>클릭해서 레시피 보기</p>
 										</div>

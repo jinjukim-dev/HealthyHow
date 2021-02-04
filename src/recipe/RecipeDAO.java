@@ -74,16 +74,32 @@ public class RecipeDAO {
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				RecipeVO recipe = new RecipeVO();
+				
 				recipe.setRecipeNo(rs.getInt(1));
 				recipe.setRecipeCode(rs.getInt(2));
 				recipe.setRecipeTitle(rs.getString(3));
-				recipe.setRecipeName(rs.getString(4));
-				recipe.setId(rs.getString(5));
-				recipe.setRecipeIngredi(rs.getString(6));
-				recipe.setRecipeSteps(rs.getString(7));
-				recipe.setRecipeDate(rs.getString(8));
-				recipe.setRecipeAvailable(rs.getInt(9));
-				recipe.setFileName(rs.getString(10));
+				recipe.setId(rs.getString(4));
+				recipe.setFileName(rs.getString(5));
+				recipe.setRecipeInfo(rs.getString(6));
+				recipe.setRecipeIngredi1(rs.getString(7));
+				recipe.setRecipeIngredi2(rs.getString(8));
+				recipe.setRecipeIngredi3(rs.getString(9));
+				recipe.setRecipeIngredi4(rs.getString(10));
+				recipe.setRecipeIngredi5(rs.getString(11));
+				recipe.setRecipeQuant1(rs.getString(12));
+				recipe.setRecipeQuant2(rs.getString(13));
+				recipe.setRecipeQuant3(rs.getString(14));
+				recipe.setRecipeQuant4(rs.getString(15));
+				recipe.setRecipeQuant5(rs.getString(16));
+				recipe.setRecipeStep1(rs.getString(17));
+				recipe.setRecipeStep2(rs.getString(18));
+				recipe.setRecipeStep3(rs.getString(19));
+				recipe.setRecipeStep1fileName(rs.getString(20));
+				recipe.setRecipeStep2fileName(rs.getString(21));
+				recipe.setRecipeStep3fileName(rs.getString(22));
+				recipe.setRecipeDate(rs.getString(23));
+				recipe.setRecipeAvailable(rs.getInt(24));
+				recipe.setRecipeTips(rs.getString(25));
 				
 				list.add(recipe);
 			}
@@ -95,34 +111,49 @@ public class RecipeDAO {
 	}
 	
 	//내가 작성한 레시피만 불러오기
-	public ArrayList<RecipeVO> getMyRecipeList(String id){
-		String SQL = "select * from recipeboard where id = ?";
-		ArrayList<RecipeVO> list = new ArrayList<RecipeVO>();
-		try {
-			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, id);
-			rs = pstmt.executeQuery();
-			while(rs.next()) {
-				RecipeVO recipe = new RecipeVO();
-				recipe.setRecipeNo(rs.getInt(1));
-				recipe.setRecipeCode(rs.getInt(2));
-				recipe.setRecipeTitle(rs.getString(3));
-				recipe.setRecipeName(rs.getString(4));
-				recipe.setId(rs.getString(5));
-				recipe.setRecipeIngredi(rs.getString(6));
-				recipe.setRecipeSteps(rs.getString(7));
-				recipe.setRecipeDate(rs.getString(8));
-				recipe.setRecipeAvailable(rs.getInt(9));
-				recipe.setFileName(rs.getString(10));
-				
-				list.add(recipe);
+	  public ArrayList<RecipeVO> getMyRecipeList(String id){ 
+		  String SQL = "select * from recipeboard where id = ?"; 
+		  ArrayList<RecipeVO> list = new ArrayList<RecipeVO>(); 
+		  try { PreparedStatement pstmt = conn.prepareStatement(SQL); 
+		  pstmt.setString(1, id); 
+		  rs = pstmt.executeQuery(); 
+		  while(rs.next()) { 
+			RecipeVO recipe = new RecipeVO();
+	  
+			recipe.setRecipeNo(rs.getInt(1));
+			recipe.setRecipeCode(rs.getInt(2));
+			recipe.setRecipeTitle(rs.getString(3));
+			recipe.setId(rs.getString(4));
+			recipe.setFileName(rs.getString(5));
+			recipe.setRecipeInfo(rs.getString(6));
+			recipe.setRecipeIngredi1(rs.getString(7));
+			recipe.setRecipeIngredi2(rs.getString(8));
+			recipe.setRecipeIngredi3(rs.getString(9));
+			recipe.setRecipeIngredi4(rs.getString(10));
+			recipe.setRecipeIngredi5(rs.getString(11));
+			recipe.setRecipeQuant1(rs.getString(12));
+			recipe.setRecipeQuant2(rs.getString(13));
+			recipe.setRecipeQuant3(rs.getString(14));
+			recipe.setRecipeQuant4(rs.getString(15));
+			recipe.setRecipeQuant5(rs.getString(16));
+			recipe.setRecipeStep1(rs.getString(17));
+			recipe.setRecipeStep2(rs.getString(18));
+			recipe.setRecipeStep3(rs.getString(19));
+			recipe.setRecipeStep1fileName(rs.getString(20));
+			recipe.setRecipeStep2fileName(rs.getString(21));
+			recipe.setRecipeStep3fileName(rs.getString(22));
+			recipe.setRecipeDate(rs.getString(23));
+			recipe.setRecipeAvailable(rs.getInt(24));
+			recipe.setRecipeTips(rs.getString(25));
+	  
+			list.add(recipe); 
 			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return list;
+	  
+	  } catch (Exception e) { 
+		  e.printStackTrace(); 
+		 } return list; 
 	}
+	 
 	
 	//글 내용 불러오기
 	public RecipeVO getRecipe(int recipeNo) {
@@ -133,16 +164,33 @@ public class RecipeDAO {
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				RecipeVO recipe = new RecipeVO();
+				
 				recipe.setRecipeNo(rs.getInt(1));
 				recipe.setRecipeCode(rs.getInt(2));
 				recipe.setRecipeTitle(rs.getString(3));
-				recipe.setRecipeName(rs.getString(4));
-				recipe.setId(rs.getString(5));
-				recipe.setRecipeIngredi(rs.getString(6));
-				recipe.setRecipeSteps(rs.getString(7));
-				recipe.setRecipeDate(rs.getString(8));
-				recipe.setRecipeAvailable(rs.getInt(9));
-				recipe.setFileName(rs.getString(10));
+				recipe.setId(rs.getString(4));
+				recipe.setFileName(rs.getString(5));
+				recipe.setRecipeInfo(rs.getString(6));
+				recipe.setRecipeIngredi1(rs.getString(7));
+				recipe.setRecipeIngredi2(rs.getString(8));
+				recipe.setRecipeIngredi3(rs.getString(9));
+				recipe.setRecipeIngredi4(rs.getString(10));
+				recipe.setRecipeIngredi5(rs.getString(11));
+				recipe.setRecipeQuant1(rs.getString(12));
+				recipe.setRecipeQuant2(rs.getString(13));
+				recipe.setRecipeQuant3(rs.getString(14));
+				recipe.setRecipeQuant4(rs.getString(15));
+				recipe.setRecipeQuant5(rs.getString(16));
+				recipe.setRecipeStep1(rs.getString(17));
+				recipe.setRecipeStep2(rs.getString(18));
+				recipe.setRecipeStep3(rs.getString(19));
+				recipe.setRecipeStep1fileName(rs.getString(20));
+				recipe.setRecipeStep2fileName(rs.getString(21));
+				recipe.setRecipeStep3fileName(rs.getString(22));
+				recipe.setRecipeDate(rs.getString(23));
+				recipe.setRecipeAvailable(rs.getInt(24));
+				recipe.setRecipeTips(rs.getString(25));
+				
 				return recipe;				
 			}
 		} catch (Exception e) {
