@@ -36,7 +36,6 @@
 	%>
 		<!-- Wrapper -->
 			<div id="wrapper">
-
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
@@ -99,7 +98,13 @@
 												<!-- 요리팁  -->
 												<tr>												
 													<td>요리팁/주의사항</td>
-													<td colspan="2"><%= recipe.getRecipeTips() %></td>																								
+													<%
+														if(recipe.getRecipeTips() == ""){
+													%>
+													<td colspan="2"></td>
+													<%}else{%>													
+													<td colspan="2"><%= recipe.getRecipeTips() %></td>
+													<%} %>																					
 												</tr>
 											</table>
 											<table>				
@@ -113,7 +118,7 @@
 												</tr>																		
 										</table>
 									</div>
-									<br/>								
+								<input type="button" style="float:right;" class="button primary" value="스크랩 하기" name="" maxlength="50"/>								
 						</div>
 					</div>
 

@@ -40,21 +40,43 @@ public class RecipeDAO {
 	}
 	
 	//작성된 레시피 저장하기
-	public int wirteRecipe(int recipeCode, String recipeTitle, String recipeName, String id, String recipeIngredi, 
-			String recipeSteps, String fileName) {
-		String SQL = "insert into recipeboard (recipeCode, recipeTitle, recipeName, id, recipeIngredi, recipeSteps, recipeDate, recipeAvailable, fileName) values" + 
-				" (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	public int wirteRecipe(int recipeCode, String recipeTitle, String id, String fileName, String recipeInfo,
+			String recipeIngredi1, String recipeIngredi2, String recipeIngredi3, String recipeIngredi4, String recipeIngredi5,
+			String recipeQuant1, String recipeQuant2, String recipeQuant3, String recipeQuant4, String recipeQuant5,
+			String recipeStep1, String recipeStep2, String recipeStep3, String recipeStep1fileName, String recipeStep2fileName, String recipeStep3fileName,
+			String recipeTips) {
+		String SQL = "insert into recipeboard (recipeCode, recipeTitle, id, fileName, recipeInfo,"
+				+ " recipeIngredi1, recipeIngredi2, recipeIngredi3, recipeIngredi4, recipeIngredi5,"
+				+ " recipeQuant1, recipeQuant2, recipeQuant3, recipeQuant4, recipeQuant5,"
+				+ " recipeStep1, recipeStep2, recipeStep3, recipeStep1fileName, recipeStep2fileName, recipeStep3fileName, "
+				+ " recipeDate, recipeAvailable, recipeTips) values" + 
+				" (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setInt(1, recipeCode);
 			pstmt.setString(2, recipeTitle);
-			pstmt.setString(3, recipeName);
-			pstmt.setString(4, id);
-			pstmt.setString(5, recipeIngredi);
-			pstmt.setString(6, recipeSteps);
-			pstmt.setString(7, getDate());
-			pstmt.setInt(8, 1);
-			pstmt.setString(9, fileName);
+			pstmt.setString(3, id);
+			pstmt.setString(4, fileName);
+			pstmt.setString(5, recipeInfo);
+			pstmt.setString(6, recipeIngredi1);
+			pstmt.setString(7, recipeIngredi2);
+			pstmt.setString(8, recipeIngredi3);
+			pstmt.setString(9, recipeIngredi4);
+			pstmt.setString(10, recipeIngredi5);
+			pstmt.setString(11, recipeQuant1);
+			pstmt.setString(12, recipeQuant2);
+			pstmt.setString(13, recipeQuant3);
+			pstmt.setString(14, recipeQuant4);
+			pstmt.setString(15, recipeQuant5);
+			pstmt.setString(16, recipeStep1);
+			pstmt.setString(17, recipeStep2);
+			pstmt.setString(18, recipeStep3);
+			pstmt.setString(19, recipeStep1fileName);
+			pstmt.setString(20, recipeStep2fileName);
+			pstmt.setString(21, recipeStep3fileName);
+			pstmt.setString(22, getDate());
+			pstmt.setInt(23, 1); //recipeAvailable
+			pstmt.setString(24, recipeTips);
 			
 			return pstmt.executeUpdate();
 			

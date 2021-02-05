@@ -22,15 +22,14 @@
 <style>
 	.at {
 		text-align: center;
-		margin-bottom: 50px;
+		margin: 50px;
 	}
 </style>
 <body>
 	<div id="wrapper">
 			<div class="main">			
 				<div class="inner">
-				<h2 style="text-align: left;"><%=session.getAttribute("id") %>님, Myhome</h2>
-				<h2 style="text-align: left;"><%=session.getAttribute("id") %>님, 작성한 레시피</h2>
+				<h3 style="text-align: center;"><%=session.getAttribute("id") %>님, 작성한 레시피</h3>
 					<section class="tiles">
 					<%
 						RecipeDAO recipeDao = new RecipeDAO();
@@ -41,7 +40,7 @@
 					
 						<article class="style<%=i+1%>">
 							<span class="image">
-								<img src="images/<%= list.get(i).getFileName()%>" alt="" style="min-height: 300px; max-height: 550px" />
+								<img src="images/<%= list.get(i).getFileName()%>" alt="" style="min-height: 400px;" />
 							</span>
 							<a href="http://localhost:8080/RecipeSite/index.jsp?center=./recipe/recipeViewForm&recipeNo=<%=list.get(i).getRecipeNo()%>">
 								<h2><%= list.get(i).getRecipeTitle()%></h2>
@@ -55,13 +54,20 @@
 						}
 					%>
 					
-						</section>
+					</section>
 					</div>
-					<br/>
+					
+					<div class="inner">
+						<h3 class="at"><%=session.getAttribute("id") %>님, 스크랩한 레시피</h3>
+					</div>
+					
+					<div class="inner">
+						<h3 class="at"><%=session.getAttribute("id") %>님, 작성한 게시글</h3>
+					</div>
+					
 					<div class = "at">
-					<a style="text-align: center;" href="http://localhost:8080/RecipeSite/index.jsp?center=./member/logoutAction" class="button primary">로그아웃</a>
-					</div>
-					<br/>				
+						<a style="text-align: center;" href="http://localhost:8080/RecipeSite/index.jsp?center=./member/logoutAction" class="button primary">로그아웃</a>
+					</div>				
 				<%-- <h2 style="text-align: center;"><%=session.getAttribute("id") %>님, 작성한 게시글</h2>
 				<div class="table-wrapper" style="width: 1000px; margin: auto;">
 					<table>

@@ -58,7 +58,7 @@
 							%>
 								<article class="style<%=i+1%>">
 									<span class="image">
-										<img src="images/<%= list.get(i).getFileName()%>" alt="" style="min-height: 300px; max-height: 550px" />
+										<img src="images/<%= list.get(i).getFileName()%>" alt="" style="min-height: 400px;" />
 									</span>
 									<a href="http://localhost:8080/RecipeSite/index.jsp?center=./recipe/recipeViewForm&recipeNo=<%=list.get(i).getRecipeNo()%>">
 										<h2><%= list.get(i).getRecipeTitle() %></h2>

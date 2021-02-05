@@ -22,8 +22,7 @@
 			%>
 											<div class="col-12">
 												<select name="recipeCode" id="demo-category">
-													<option value="0">- 카테고리를 선택해주세요. -</option>
-													<% for(int i=1; i<list.size(); i++) { %>
+													<% for(int i=0; i<list.size(); i++) { %>
 													<option value="<%=i%>"><%= list.get(i).getRecipeMenu()%></option>
 													<% } %>	
 													<!-- <option value="2">건강 도시락</option>
@@ -125,6 +124,7 @@
 											해당 요리 순서의 이미지를 선택해주세요. <input type="file" placeholder="레시피 대표 이미지" name="recipeStep3fileName" maxlength="50"/>
 										</td>																									
 									</tr>
+			
 									<tr>
 										<td colspan="2">
 											<input type="button" style="float:right;" class="button primary" value="순서추가" name="" maxlength="50"/>

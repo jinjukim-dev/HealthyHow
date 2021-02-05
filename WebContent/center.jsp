@@ -24,7 +24,7 @@
 								RecipeMenuDAO menuDao = new RecipeMenuDAO();
 								ArrayList<RecipeMenuVO> list = menuDao.getMenuList();
 								
-								for(int i=0; i<list.size(); i++){
+								for(int i=1; i<list.size(); i++){
 							%>
 								<article class="style<%=i+1%>">
 									<span class="image">
