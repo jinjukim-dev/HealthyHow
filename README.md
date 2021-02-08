@@ -24,8 +24,15 @@
 <img src = "https://user-images.githubusercontent.com/62095517/88182262-f22f3080-cc6a-11ea-8522-9fa34a08fa2f.PNG" width="45%">
 </div>
 <br/>
-- 레시피 공유 화면
+- 레시피 공유화면
 <div>
 <img src = "https://user-images.githubusercontent.com/62095517/88182305-fd825c00-cc6a-11ea-9f35-8176b4bd2bf6.PNG" width="45%">
 <img src = "https://user-images.githubusercontent.com/62095517/88182346-083cf100-cc6b-11ea-9bd4-ad95470113ab.PNG" width="45%">
+</div>
+
+### 업데이트
+- 레시피 공유 화면 개선
+<div>
+  <img src = "https://user-images.githubusercontent.com/62095517/107196552-1cddac80-6a36-11eb-81ff-f3a5bc38d440.png" width=40%>
+  <img src = "https://user-images.githubusercontent.com/62095517/107196825-76de7200-6a36-11eb-9cfa-0f4ce97cc801.png" width=40%>
 </div>
