@@ -54,7 +54,6 @@
 								
 								for(int i=0; i<list.size(); i++){
 									
-								
 							%>
 								<article class="style<%=i+1%>">
 									<span class="image">

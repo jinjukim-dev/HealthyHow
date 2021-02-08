@@ -1,6 +1,6 @@
-<%@page import="java.io.PrintWriter"%>
+<%@ page import="java.io.PrintWriter"%>
 <%@ page import="recipe.*" %>
-<%@ page import="java.io.PrintWriter" %>
+<%@ page import="java.util.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <html>
@@ -14,7 +14,7 @@
 	<body class="is-preload">
 	<%
 		String id = null;
-		if(session.getAttribute("ud") != null){
+		if(session.getAttribute("id") != null){
 			id = (String) session.getAttribute("id");
 		}
 		
@@ -56,7 +56,7 @@
 												</tr>
 											</thead>
 											<!-- 요리재료 -->					
-											<tbody style="text-align:center;">
+											<tbody style="text-align:center;">											
 												<tr>
 													<td><%= recipe.getRecipeIngredi1()%></td>
 													<td><%= recipe.getRecipeQuant1() %></td>																								
@@ -118,7 +118,31 @@
 												</tr>																		
 										</table>
 									</div>
-								<input type="button" style="float:right;" class="button primary" value="스크랩 하기" name="" maxlength="50"/>								
+								<%
+								
+								ArrayList scrapList = new ArrayList();
+								session.setAttribute("scrapList", scrapList);
+																
+								if(session.getAttribute("id") != null){									
+								%>
+								
+								<form name="addScrap" action="./recipe/add.jsp" method="post">
+								 <input type="submit" style="float:right;" class="button primary" value="스크랩 하기" name="" maxlength="50"/>
+								 <input type="hidden" name="recipeNo" value="<%= recipeNo %>"/>
+								</form>
+								
+								<%
+									System.out.println("recipeNo = "+recipeNo);
+								%>
+								
+								<% }%>
+								<%-- <%
+									if(id.equals(recipe.getId())){
+								%>
+										<input type="button" style="float:right;" class="button primary" value="수정하기" name="update" maxlength="50"/>
+								<%		
+									}
+								%> --%>							
 						</div>
 					</div>
 

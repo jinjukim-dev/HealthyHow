@@ -11,7 +11,7 @@
     		response.sendRedirect("logout.jsp");
     	}
     
-    	String id = (String) session.getAttribute("id");
+    	String id = (String) session.getAttribute("id");	
     %>
 <!DOCTYPE html>
 <html>
@@ -27,9 +27,10 @@
 </style>
 <body>
 	<div id="wrapper">
-			<div class="main">			
+			<div class="main">
+			<!-- 내가 작성한 레시피 부분 -->	
 				<div class="inner">
-				<h3 style="text-align: center;"><%=session.getAttribute("id") %>님, 작성한 레시피</h3>
+				<h2 style="text-align: center;"><%=session.getAttribute("id") %>님, 작성한 레시피</h2>
 					<section class="tiles">
 					<%
 						RecipeDAO recipeDao = new RecipeDAO();
@@ -37,7 +38,6 @@
 						
 						for(int i=0; i<list.size(); i++){
 					%>
-					
 						<article class="style<%=i+1%>">
 							<span class="image">
 								<img src="images/<%= list.get(i).getFileName()%>" alt="" style="min-height: 400px;" />
@@ -55,15 +55,39 @@
 					%>
 					
 					</section>
-					</div>
+					<br/>
+				</div>
+				<!-- 스크랩한 부분 -->	
+				<div class="inner">
+				<h2 style="text-align: center;"><%=session.getAttribute("id") %>님, 스크랩한 레시피</h2>
 					
-					<div class="inner">
-						<h3 class="at"><%=session.getAttribute("id") %>님, 스크랩한 레시피</h3>
-					</div>
-					
+					<%
+					//스크랩 리스트
+					ArrayList scrapList = (ArrayList)session.getAttribute("list");
+	
+					if(scrapList == null){ %>
+						<h3 style="text-align: center;">스크랩한 레시피가 없습니다.</h3>
+					<section class="tiles">
+					<% }else{
+						
+						for(int i=0; i<scrapList.size(); i++){
+							out.println(scrapList.get(i) + "\n");
+							
+					%>
+						
+						
+					<%		
+							
+						}
+					}
+					%>
+					</section>
+				</div>
+						
+					<%--
 					<div class="inner">
 						<h3 class="at"><%=session.getAttribute("id") %>님, 작성한 게시글</h3>
-					</div>
+					</div> --%>
 					
 					<div class = "at">
 						<a style="text-align: center;" href="http://localhost:8080/RecipeSite/index.jsp?center=./member/logoutAction" class="button primary">로그아웃</a>

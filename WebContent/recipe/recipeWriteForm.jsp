@@ -95,9 +95,9 @@
 										</td>										
 									</tr>
 									<tr>
-										<td colspan="2">						
+										<!-- <td colspan="2">						
 											<input type="button" style="float:right;" class="button primary" value="재료추가" name="" maxlength="50"/>
-										</td>																																				
+										</td> -->																																				
 									</tr>
 								</tbody>
 					</table>
@@ -125,11 +125,11 @@
 										</td>																									
 									</tr>
 			
-									<tr>
+									<!-- <tr>
 										<td colspan="2">
 											<input type="button" style="float:right;" class="button primary" value="순서추가" name="" maxlength="50"/>
 										</td>
-									</tr>
+									</tr> -->
 									<tr>
 										<td colspan="2"><textarea style="min-height: 130px;" placeholder="요리팁 &#13;&#10;예) 과일과 채소를 먼저 간 후에 물을 넣고 갈아야 잘 섞여요." name="recipeTips" maxlength="1000"></textarea></td>																									
 									</tr>											
