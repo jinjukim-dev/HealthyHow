@@ -32,7 +32,4 @@
 
 ### 업데이트
 - 레시피 공유 화면 개선
-<div>
-  <img src = "https://user-images.githubusercontent.com/62095517/107196552-1cddac80-6a36-11eb-81ff-f3a5bc38d440.png" width=40%>
-  <img src = "https://user-images.githubusercontent.com/62095517/107196825-76de7200-6a36-11eb-9cfa-0f4ce97cc801.png" width=40%>
-</div>
+
